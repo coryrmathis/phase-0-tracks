@@ -1,6 +1,6 @@
 #Form Elements
 
-* form: iniates the form in HTML
+* form: initiates the form in HTML
 * name="adventure": describes the purpose of the form for the programmer
 * action: creates an action
 * method: specifies how to send the data
