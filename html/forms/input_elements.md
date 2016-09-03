@@ -1,6 +1,10 @@
 #Form Elements
 
+<<<<<<< HEAD
+* form: iniates the form in HTML
+=======
 * form: initiates the form in HTML
+>>>>>>> 2433f724bc3b607121669845e69d6a1830111574
 * name="adventure": describes the purpose of the form for the programmer
 * action: creates an action
 * method: specifies how to send the data
@@ -13,4 +17,8 @@
 * option: defines options in the list
 * value: specifies the value to be sent to the server (what does the description in quotes do?)
 * button: creates a button block. "type= assigns an action to the button"
+<<<<<<< HEAD
 * input type ="checkbox" etc..: Creates a checkbox component and specifies its use.
+=======
+* input type ="checkbox" etc..: Creates a checkbox component and specifies its use.
+>>>>>>> 2433f724bc3b607121669845e69d6a1830111574
