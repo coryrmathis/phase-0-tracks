@@ -13,6 +13,11 @@
 	font-size: .8em;
 }
 
-p:first-letter {
-	font-size= 4em;
+.fancy:first-letter {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2em;
+}
+
+#work-experience li {
+	font-style: italic;
 }
