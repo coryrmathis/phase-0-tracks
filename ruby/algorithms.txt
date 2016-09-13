@@ -14,3 +14,36 @@ Elevator Algorithm
 	-Request new “desired floor” input.
 -Wait for elevator door to open.
 -Exit elevator onto “desired floor”.
+
+Brushing Teeth Algorithm
+
+-If unoccupied,
+	-Enter bathroom.
+-Otherwise
+	-Wait for occupant to exit.
+-Retrieve the orange toothbrush from the cup to the left of the faucet with your right hand.
+-Turn on faucet with left hand.
+-Rinse brush head under flowing water
+-Turn faucet off with left hand.
+-Open top vanity drawer.
+-Retrieve tube of Crest Total toothpaste.
+-If toothpaste is full
+	-Squeeze pea-sized amount onto toothbrush bristles.
+-Otherwise
+	-Fold tube from the bottom and try again.
+-Return toothpaste to top vanity drawer
+-Start timer at 00:02:00
+-Introduce brush head to mouth.
+-Until timer==0,
+	-Scrub bottom teeth, top teeth, and gums in a circular motion.
+-Turn faucet on with left hand.
+-Rinse brush head under flowing water.
+-Return toothbrush to the cup to the left of the faucet.
+-Using disposable paper cup to the right of faucet, fill with water.
+-Turn faucet off with left hand.
+-Pour water into mouth and gargle for 20 seconds.
+-Spit water into sink.
+-Throw cup into waste basket next to toilet.
+-Smile at self in mirror.
+-Exit bathroom and begin day.
+
