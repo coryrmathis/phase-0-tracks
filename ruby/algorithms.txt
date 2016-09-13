@@ -1,0 +1,16 @@
+Elevator Algorithm
+
+-Request input regarding desired “elevator direction”: up/down.
+-If “elevator direction”==up, 
+	-Push up button.
+-Otherwise, 
+	-Push down button.
+-Wait for elevator doors to open.
+-When elevator doors open, enter elevator cabin and request input regarding “desired floor”.
+-Search elevator wall for a button that matches inputed “desired floor”.
+-If “desired floor” is found,
+	Push corresponding button.
+-Otherwise,
+	-Request new “desired floor” input.
+-Wait for elevator door to open.
+-Exit elevator onto “desired floor”.
