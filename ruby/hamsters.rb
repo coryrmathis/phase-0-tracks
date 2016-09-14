@@ -1,6 +1,10 @@
 puts "What's the hamster's name?"
 name = gets.chomp
 name = name.split.map(&:capitalize).join(' ')
+# split.map(&:capitalize).join(' ')
+# pretty much runs an each, do on each of the names, split by a space
+# the names are then capitalized, and joined together with a space
+# https://stackoverflow.com/questions/13520162/ruby-capitalize-every-word-first-letter
 
 puts ""
 valid_input = false
@@ -15,6 +19,7 @@ until valid_input
 		puts "I didn't understand you."
 	end
 end
+# Valid input only from  0.0 - 10.0
 
 puts ""
 puts "What is its fur color?"
@@ -38,6 +43,8 @@ until valid_input
 		puts "I didn't understand you."
 	end
 end
+# Valid input only y/n
+# Output is capitalized boolean.to_s
 
 puts ""
 valid_input = false
@@ -55,6 +62,9 @@ until valid_input
 		puts "I didn't understand you."
 	end
 end
+# Takes "" as input > nil
+# Takes any number > 0 as valid (no hamster will be 0.0 years old)
+# Has to be > 0 because .to_i / .to_f both return 0 / 0.0 even if gibberish
 
 puts ""
 puts "             Name:     #{name}"
