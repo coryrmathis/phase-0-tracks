@@ -47,16 +47,15 @@ until valid_input
 end
 
 #Vampire detection program.
-case
-when (age_honesty == true) && (garlic || insurance)
+if age_honesty == true && (garlic == true || insurance == true)
 	vampire_status = "Probably not a vampire."
-when (age_honesty == false) && ((garlic == false) || (insurance == false))
+elsif age_honesty == false && (garlic == false && insurance == true)
 	vampire_status = "Probably a vampire."
-when (age_honesty == false) && (garlic == false) && (insurance == false)
+elsif age_honesty == false && (garlic == true && insurance == false)
+	vampire_status = "Probably a vampire."
+elsif age_honesty == false && (garlic == false && insurance == false)
 	vampire_status = "Almost certainly a vampire."
 end
-
-puts vampire_status
 
 
 
