@@ -1,0 +1,36 @@
+.column-1 {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  border-style: solid;
+  margin-left: 20px;
+  padding: 5px;
+  background-color: #add8e6;
+  height: 1200px;
+  overflow: scroll;
+}
+
+.column-2 {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  border-style: solid;
+  padding: 5px;
+  background-color: #d3d3d3;
+  height: 1200px;
+  overflow: scroll;
+}
+
+body {
+  font-family: Helvetica;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  background-image: url(http://images.all-free-download.com/images/graphiclarge/retro_background_floral_blue_pattern_267501.jpg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: orange;
+}
