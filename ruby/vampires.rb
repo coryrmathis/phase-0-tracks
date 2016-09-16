@@ -47,6 +47,16 @@ until valid_input
 end
 
 #Vampire detection program.
+#     Match the following conditions in the order 
+#they're listed. Your program should base its 
+#result on the latest condition matched, not the 
+#first condition matched. In other words, it's 
+#not a "only one condition will apply" sort of 
+#scenario. This may mean repeatedly updating a 
+#variable as each condition is checked, so 
+#that the variable always contains the most 
+#precise result.
+
 if age_honesty == true && (garlic == true || insurance == true)
 	vampire_status = "Probably not a vampire."
 elsif age_honesty == false && (garlic == false && insurance == true)
@@ -55,7 +65,9 @@ elsif age_honesty == false && (garlic == true && insurance == false)
 	vampire_status = "Probably a vampire."
 elsif age_honesty == false && (garlic == false && insurance == false)
 	vampire_status = "Almost certainly a vampire."
+elsif name = "Drake Cula" || "Tu Fang"
 end
+
 
 
 
