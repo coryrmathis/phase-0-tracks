@@ -1,4 +1,7 @@
-
+# How many candidates will be processed this session?
+puts "How many employees will be processed this session?"
+candidates = gets.chomp
+candidates = candidates.to_i
 # Recieve applicant name.
 puts "Welcome to Werewolf Inc.  Please state your name."
 name = gets.chomp
@@ -49,13 +52,28 @@ end
 #Vampire detection program.
 if age_honesty == true && (garlic == true || insurance == true)
 	vampire_status = "Probably not a vampire."
-elsif age_honesty == false && (garlic == false && insurance == true)
+	possibility_1 = true
+elsif (age_honesty == false && (garlic == false && insurance == true)) || (age_honesty == false && (garlic == true && insurance == false))
 	vampire_status = "Probably a vampire."
-elsif age_honesty == false && (garlic == true && insurance == false)
-	vampire_status = "Probably a vampire."
-elsif age_honesty == false && (garlic == false && insurance == false)
+	possibility_2 = true
+elsif (age_honesty == false && (garlic == false && insurance == false))
 	vampire_status = "Almost certainly a vampire."
+	possibility_3 = true
+else
+	vampire_status = "Results inconclusive."
 end
+
+if (possibility_1 == true) && (name == "Drake Cula" || name == "Tu Fang")
+	vampire_status = "Definitly a vampire."
+elsif (possibility_2 == true) && (name == "Drake Cula" || name == "Tu Fang")
+	vampire_status = "Definitly a vampire."
+elsif (possibility_3 == true) && (name == "Drake Cula" || name == "Tu Fang")
+	vampire_status = "Definitely a vampire."
+end
+
+puts vampire_status
+
+
 
 
 
