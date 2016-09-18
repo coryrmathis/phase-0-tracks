@@ -10,11 +10,16 @@
 def encrypt(password)
 	counter = 0
 	while counter < password.length
+	if password[counter] == " "
+		password[counter] = " "
+		counter += 1
+	else
 		alphabet = "abcdefghijklmnopqrstuvwxyz"
 		alphabet.reverse!
 		instance_in_alphabet = alphabet[alphabet.index(password[counter])]
 		password[counter] = alphabet[(alphabet.index(instance_in_alphabet)) - 1] 
 		counter += 1 
+	end
 	end
 return password 
 end
@@ -34,10 +39,15 @@ end
 def decrypt(password)
 	counter = 0
 	while counter < password.length
+	if password[counter] == " "
+		password[counter] = " "
+		counter += 1
+	else
 		alphabet = "abcdefghijklmnopqrstuvwxyz"
 		instance_in_alphabet = alphabet[alphabet.index(password[counter])]
 		password[counter] = alphabet[(alphabet.index(instance_in_alphabet)) - 1] 
 		counter += 1 
+	end
 	end
 return password 
 end
@@ -48,8 +58,9 @@ end
 #puts decrypt("afe")
 
 #puts decrypt(encrypt("swordfish"))
+# Because the parentheses require the encryption to occur first, the decryption functions correctly.
 
-puts "State your name"
+puts "State your last name"
 name = gets.chomp
 puts "Hello Agent #{name}. Would you like to encrypt or decrypt?"
 choice = gets.chomp
@@ -59,13 +70,16 @@ if choice == "encrypt"
 	puts "What would you like to encrypt?"
 	password = gets.chomp
 	encrypted_password = encrypt(password)
-	puts "Your encrypted password: #{encrypted_password}"
+	puts "Your encryption password: #{encrypted_password}"
 elsif choice == "decrypt"
 	puts "What would you like to decrypt?"
 	password = gets.chomp
 	decrypted_password = decrypt(password)
-	puts "Your decrypted password: #{decrypted_password}"
+	puts "Your decryption: #{decrypted_password}"
 end
+
+puts ""
+puts "Exiting program..."
 
 
 
