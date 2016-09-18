@@ -62,6 +62,7 @@ while candidates > 0
 		possibility_3 = true
 	else
 		vampire_status = "Results inconclusive."
+		possibility_4 = true
 	end
 
 	if (possibility_1 == true) && (name == "Drake Cula" || name == "Tu Fang")
@@ -69,6 +70,8 @@ while candidates > 0
 	elsif (possibility_2 == true) && (name == "Drake Cula" || name == "Tu Fang")
 		vampire_status = "Definitly a vampire."
 	elsif (possibility_3 == true) && (name == "Drake Cula" || name == "Tu Fang")
+		vampire_status = "Definitely a vampire."
+	elsif (possibility_4 == true) && (name == "Drake Cula" || name == "Tu Fang")
 		vampire_status = "Definitely a vampire."
 	end
 
