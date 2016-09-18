@@ -42,12 +42,32 @@ def decrypt(password)
 return password 
 end
 
-puts encrypt("abc")
-puts encrypt("zed")
-puts decrypt("bcd")
-puts decrypt("afe")
+#puts encrypt("abc")
+#puts encrypt("zed")
+#puts decrypt("bcd")
+#puts decrypt("afe")
 
-puts decrypt(encrypt("swordfish"))
+#puts decrypt(encrypt("swordfish"))
+
+puts "State your name"
+name = gets.chomp
+puts "Hello Agent #{name}. Would you like to encrypt or decrypt?"
+choice = gets.chomp
+choice = choice.downcase
+
+if choice == "encrypt"
+	puts "What would you like to encrypt?"
+	password = gets.chomp
+	encrypted_password = encrypt(password)
+	puts "Your encrypted password: #{encrypted_password}"
+elsif choice == "decrypt"
+	puts "What would you like to decrypt?"
+	password = gets.chomp
+	decrypted_password = decrypt(password)
+	puts "Your decrypted password: #{decrypted_password}"
+end
+
+
 
 
 
