@@ -10,10 +10,13 @@
 def encrypt(password)
 	counter = 0
 	while counter < password.length
-		password[counter] = password[counter].next
-		counter += 1
+		alphabet = "abcdefghijklmnopqrstuvwxyz"
+		alphabet.reverse!
+		instance_in_alphabet = alphabet[alphabet.index(password[counter])]
+		password[counter] = alphabet[(alphabet.index(instance_in_alphabet)) - 1] 
+		counter += 1 
 	end
-puts password
+return password 
 end
 
 
@@ -36,7 +39,7 @@ def decrypt(password)
 		password[counter] = alphabet[(alphabet.index(instance_in_alphabet)) - 1] 
 		counter += 1 
 	end
-puts password 
+return password 
 end
 
 puts encrypt("abc")
@@ -44,6 +47,7 @@ puts encrypt("zed")
 puts decrypt("bcd")
 puts decrypt("afe")
 
+puts decrypt(encrypt("swordfish"))
 
 
 
