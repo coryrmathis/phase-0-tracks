@@ -19,7 +19,7 @@
 # 8. Create method to join characters into single names
 # 9. Swap the first and last names and print
 	
-
+# Driver Code
 
 # Returns array of names
 def name_to_array(names)
@@ -41,7 +41,7 @@ def next_vowel(letter)
 end
 end
 
-# Takes a consonant and returns the next vowel
+# Takes a consonant and returns the next consonant
 def next_consonant(letter)
 	consonants = "bcdfghjklmnpqrstvwxyz"
 	if letter == "z"
@@ -52,7 +52,7 @@ end
 end
 
 # Converts characters in original name to those to be in alias name
-def alias_chars(name_chars)
+def to_alias_chars(name_chars)
 name_chars.map! do |character|
 	character = character.downcase
 	if character == "a"
@@ -71,28 +71,38 @@ name_chars.map! do |character|
 end
 end
 
+
+#User Interface
+#***I know some of the code below is less than readable.  I got a bit stuck and ran out of time.
+stop_status = false
+real_name_array = []
+alias_array = []
+until stop_status == true
 puts "Please enter your full name."
 original_full_name = gets.chomp
+if original_full_name != "quit"
 first_name_chars = name_to_char(name_to_array(original_full_name)[0])
 last_name_chars = name_to_char(name_to_array(original_full_name)[1])
 
-alias_first_name = alias_chars(first_name_chars).join('').capitalize
-alias_last_name = alias_chars(last_name_chars).join('').capitalize
+alias_last_name = to_alias_chars(first_name_chars).join('').capitalize
+alias_first_name = to_alias_chars(last_name_chars).join('').capitalize
 
-puts "Your alias is: #{alias_last_name} #{alias_first_name}"
+final_alias = alias_first_name + " " + alias_last_name 
+real_name_array << original_full_name
+alias_array << final_alias
+puts "Your alias is: #{final_alias}"
+stop_status = false
+counter = 0
+else
+	while counter < real_name_array.length 
+	puts "#{real_name_array[counter]} AKA #{alias_array[counter]}"
+	counter += 1
+end
+	puts "Goodbye"
+	stop_status = true
+end
+end
 
-
-
-
-#names = name_to_array("Felicia Torres")
-
-#first_name_chars = name_to_char(names[0])
-#last_name_chars = name_to_char(names[1])
-
-#alias_first_name = alias_chars(first_name_chars).join('').capitalize
-#alias_last_name = alias_chars(last_name_chars).join('').capitalize
-
-#puts "Your alias is: #{alias_last_name} #{alias_first_name}"
 
 
 
