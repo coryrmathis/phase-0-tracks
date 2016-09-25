@@ -36,4 +36,49 @@ end
 
 #puts search_array(arr, 0)
 
+# Release 2
+# A method that takes an integer and returns an array
+# of Fibonacci numbers  array.length == integer
+
+def fib(input_integer)
+fibonacci_numbers = [0, 1]
+counter = 0
+until fibonacci_numbers.length == input_integer
+	next_number = fibonacci_numbers[counter_2] + fibonacci_numbers[counter_2 + 1]
+	fibonacci_numbers << next_number
+	counter += 1
+end
+fibonacci_numbers
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
