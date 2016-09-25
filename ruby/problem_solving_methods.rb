@@ -36,7 +36,7 @@ end
 
 #puts search_array(arr, 0)
 
-# Release 2
+# Release 1
 # A method that takes an integer and returns an array
 # of Fibonacci numbers  array.length == integer
 
@@ -50,6 +50,29 @@ until fibonacci_numbers.length == input_integer
 end
 fibonacci_numbers
 end
+
+# Release 2
+
+# Bubble Sort- A sorting method which sorts by comparing
+# two adjacent elements, starting at the beginning of the list,
+# and switching them if they're in the wrong order. It them moves to the next
+# adjacent pair of elements (which would include one of the previous elements).
+# Working this way, larger elements "bubble" to the end of a list, leaving one
+# element fully sorted on each iterations.
+
+# 1. Compare first two elements.
+# 	-If they are correctly ordered, move to next two.
+# 	-If not switch the order.
+# 2. Compare next two elements as above
+# 3. Continue until there are no elements left to be sorted.
+
+def bubble_sort(integer_array)
+	integer_array
+	swap = false
+	until swap == true
+
+
+
 
 
 
