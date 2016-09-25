@@ -5,6 +5,7 @@
 # If the integer isn't present. Returns nil.
 # Can't use .index.  Can use .length and .each.
 
+# Converts array to hash with index numbers as keys (To be used in search_array)
 def arr_to_hash(array)
 counter = 0
 index_integer_hash = {}
@@ -15,21 +16,24 @@ end
 return index_integer_hash
 end
 
-
+# Searches array for integer and prints index
 def search_array(arr, integer)
 	integer_hash = arr_to_hash(arr)
+	counter = 0
 	integer_hash.each do |index, hash_integer|
 		if hash_integer == integer
 			puts index
 		else
-			puts "nil"
+			counter += 1
 		end
+	if counter == arr.length
+		puts "nil"
+	end
 	end
 end
 
-arr = [1, 3, 5, 7]
-#puts arr_to_hash(arr)
+#arr = [1, 3, 5, 7]
 
-puts search_array(arr, 3)
+#puts search_array(arr, 0)
 
 
