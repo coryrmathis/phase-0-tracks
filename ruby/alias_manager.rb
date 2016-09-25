@@ -78,7 +78,7 @@ stop_status = false
 real_name_array = []
 alias_array = []
 until stop_status == true
-puts "Please enter your full name."
+puts "Please enter your first and last name to recieve an alias.  Type 'quit' when you're finished."
 original_full_name = gets.chomp
 if original_full_name != "quit"
 first_name_chars = name_to_char(name_to_array(original_full_name)[0])
@@ -95,9 +95,11 @@ stop_status = false
 counter = 0
 else
 	while counter < real_name_array.length 
+	puts ""
 	puts "#{real_name_array[counter]} AKA #{alias_array[counter]}"
 	counter += 1
 end
+	puts "Goodbye"
 	puts "Goodbye"
 	stop_status = true
 end
