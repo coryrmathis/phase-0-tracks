@@ -66,10 +66,26 @@ end
 # 2. Compare next two elements as above
 # 3. Continue until there are no elements left to be sorted.
 
-def bubble_sort(integer_array)
-	integer_array
-	swap = false
-	until swap == true
+def bubble_sort(arr)
+length = arr.length
+loop do
+switch = false
+	(length - 1).times do |i|
+	    if arr[i] > arr[i + 1]
+	    	arr[i], arr[i + 1] = arr[i+1], arr[i]
+	        switch = true
+	    end
+	end
+	if switch == false
+	    break
+	  end
+end
+arr
+end
+
+arr = [22, 3, 5, 7, 2, 1, 0]
+p bubble_sort(arr)
+
 
 
 
