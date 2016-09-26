@@ -19,7 +19,7 @@
 # 8. Create method to join characters into single names
 # 9. Swap the first and last names and print
 	
-# Driver Code
+# Methods, Etc.
 
 # Returns array of names
 def name_to_array(names)
@@ -80,27 +80,28 @@ alias_array = []
 until stop_status == true
 puts "Please enter your first and last name to recieve an alias.  Type 'quit' when you're finished."
 original_full_name = gets.chomp
-if original_full_name != "quit"
-first_name_chars = name_to_char(name_to_array(original_full_name)[0])
-last_name_chars = name_to_char(name_to_array(original_full_name)[1])
+	if original_full_name != "quit"
+	first_name_chars = name_to_char(name_to_array(original_full_name)[0])
+	last_name_chars = name_to_char(name_to_array(original_full_name)[1])
 
-alias_last_name = to_alias_chars(first_name_chars).join('').capitalize
-alias_first_name = to_alias_chars(last_name_chars).join('').capitalize
+	alias_last_name = to_alias_chars(first_name_chars).join('').capitalize
+	alias_first_name = to_alias_chars(last_name_chars).join('').capitalize
 
-final_alias = alias_first_name + " " + alias_last_name 
-real_name_array << original_full_name
-alias_array << final_alias
-puts "Your alias is: #{final_alias}"
-stop_status = false
-counter = 0
-else
-	while counter < real_name_array.length 
+	final_alias = alias_first_name + " " + alias_last_name 
+	real_name_array << original_full_name
+	alias_array << final_alias
+	puts "Your alias is: #{final_alias}"
 	puts ""
-	puts "#{real_name_array[counter]} AKA #{alias_array[counter]}"
-	counter += 1
+	stop_status = false
+	counter = 0
+	else
+		while counter < real_name_array.length 
+		puts ""
+		puts "#{counter + 1}. #{real_name_array[counter]} is always known as #{alias_array[counter]}."
+		counter += 1
 end
-	puts "Goodbye"
-	puts "Goodbye"
+	puts ""
+	puts "Exiting alias program. Destroy all evidence of this transaction."
 	stop_status = true
 end
 end
