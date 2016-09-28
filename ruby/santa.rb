@@ -27,6 +27,10 @@ class Santa
 	end
 end
 
+# DRIVER CODE
+
+# Testing instance methods
+
 # santa_1 = Santa.new
 # santa_1.speak
 # santa_1.eat_milk_and_cookies("ladyfinger")
@@ -43,5 +47,6 @@ end
 santa_1 = santas[0]
 p santa_1
 santa_1.get_mad_at("Rudolph")
-p
+santa_1.celebrate_birthday
+p santa_1
 
