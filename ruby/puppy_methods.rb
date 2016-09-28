@@ -62,10 +62,23 @@ class Monkey
 
 end
 
-fred = Monkey.new
+# fred = Monkey.new
 
-fred.swing
-fred.add_tool("rock hammer")
+# fred.swing
+# fred.add_tool("rock hammer")
+
+
+fifty_monkeys = []
+50.times do 
+	fifty_monkeys << Monkey.new
+end
+
+fifty_monkeys.each do |monkey|
+	monkey.swing
+	monkey.add_tool("ant stick")
+end
+
+
 
 
 
