@@ -32,10 +32,61 @@ class Puppy
 	end
 end
 
-spot = Puppy.new
-spot.fetch("rope")
-spot.speak(5)
-spot.roll_over
-spot.dog_years(4)
-spot.learn_trick("Play Dead")
-spot.learn_trick("Speak")
+# spot = Puppy.new
+# spot.fetch("rope")
+# spot.speak(5)
+# spot.roll_over
+# spot.dog_years(4)
+# spot.learn_trick("Play Dead")
+# spot.learn_trick("Speak")
+
+class Monkey
+
+	def initialize
+		puts "Initializing new monkey instance..."
+	end
+
+	def swing
+		puts "-" * 20 + "> limb"
+		puts ""
+		puts "to <" + "-" * 20
+		puts ""
+		puts "-" * 20 + "> limb"
+	end
+
+	def add_tool(tool)
+		tool_array = []
+		tool_array << tool
+		p tool_array
+	end
+
+end
+
+fred = Monkey.new
+
+fred.swing
+fred.add_tool("rock hammer")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
