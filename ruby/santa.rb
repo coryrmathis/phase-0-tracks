@@ -15,6 +15,16 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts "That sure was a good #{cookie}"
 	end
+
+	def celebrate_birthday
+		@age += 1
+	end
+
+	def get_mad_at(reindeer)
+		reindeer_index = @reindeer_rating.index(reindeer)
+		@reindeer_rating.delete_at(reindeer_index)
+		@reindeer_rating[-1] = reindeer
+	end
 end
 
 # santa_1 = Santa.new
@@ -30,4 +40,8 @@ prng = Random.new
 	santas << Santa.new(example_genders[prng.rand(example_genders.length)], example_ethnicities[prng.rand(example_ethnicities.length)])
 end
 
-santas
+santa_1 = santas[0]
+p santa_1
+santa_1.get_mad_at("Rudolph")
+p
+
