@@ -34,25 +34,40 @@ end
 
 # SANTA CREATION PROGRAM
 
+# Version 2.0 (Much cleaner and more concise)
+
+1000.times do 
+	santa = Santa.new(example_genders.sample, example_ethnicities.sample, rand(140))
+	puts "-" * 10
+	puts "This santa's age is #{santa.age}."
+	puts "They identify as #{santa.gender}."
+	puts "Their ethnicity is #{santa.ethnicity}."
+	puts "-" * 10
+end
+
+
+
+# Version 1.0 (Left in as comment for reference)
+
 # *Prepare empty santa container and example gender and ethnicity arrays.*
 
-santas = []
-example_genders = ["male", "female", "shmale", "transgender", "agender"]
-example_ethnicities = ["Hispanic", "White", "African-American", "Native American", "Asian", "Asian-American"]
+# santas = []
+# example_genders = ["male", "female", "shmale", "transgender", "agender"]
+# example_ethnicities = ["Hispanic", "White", "African-American", "Native American", "Asian", "Asian-American"]
 
 # *Random number generator to randomly assign gender and ethnicity to each
 # initialized santa. Random is a Ruby class. 0 <= random number < max integer.*
 
-prng = Random.new
-1000.times do |i|
-	santas << Santa.new(example_genders[prng.rand(example_genders.length)], example_ethnicities[prng.rand(example_ethnicities.length)], prng.rand(140) )
-	puts "-" * 10
-	puts "This santa's age is #{santas[i].age}."
-	puts "They identify as #{santas[i].gender}."
-	puts "Their ethnicity is #{santas[i].ethnicity}."
-	puts "-" * 10
-end
 
+# prng = Random.new
+# 1000.times do |i|
+# 	santas << Santa.new(example_genders[prng.rand(example_genders.length)], example_ethnicities[prng.rand(example_ethnicities.length)], prng.rand(140) )
+# 	puts "-" * 10
+# 	puts "This santa's age is #{santas[i].age}."
+# 	puts "They identify as #{santas[i].gender}."
+# 	puts "Their ethnicity is #{santas[i].ethnicity}."
+# 	puts "-" * 10
+# end
 
 # DRIVER CODE
 
