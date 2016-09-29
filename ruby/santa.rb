@@ -44,7 +44,7 @@ example_ethnicities = ["Hispanic", "White", "African-American", "Native American
 # initialized santa. Random is a Ruby class. 0 <= random number < max integer.*
 
 prng = Random.new
-20.times do |i|
+1000.times do |i|
 	santas << Santa.new(example_genders[prng.rand(example_genders.length)], example_ethnicities[prng.rand(example_ethnicities.length)], prng.rand(140) )
 	puts "-" * 10
 	puts "This santa's age is #{santas[i].age}."
