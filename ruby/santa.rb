@@ -25,6 +25,14 @@ class Santa
 		@reindeer_rating.delete_at(reindeer_index)
 		@reindeer_rating[-1] = reindeer
 	end
+
+	def age
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
 end
 
 # DRIVER CODE
