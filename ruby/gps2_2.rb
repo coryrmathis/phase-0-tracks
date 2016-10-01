@@ -50,13 +50,15 @@ end
 # input: list, Hash Key(Item Name), quantity
 # steps:
  # IF item is in the list
- # Update item quantity
+ # 	Update item quantity
  # IF item is NOT in the list
- # Print error message
+ # 	Print update message
+ # 	Update list
 # output: Updated Hash
 def update_item_quantity(list, item, quantity)
   if list[item] == nil
-    puts 'We should have added this to the list for you, but we had no time. Sorry.'
+    puts "Adding new item to list..."
+    list[item] = quantity
   else
     list[item] = quantity
   end
@@ -96,11 +98,21 @@ update_item_quantity(new_grocery_list, "Ice Cream", 1)
 
 print_list(new_grocery_list)
 
+# REFLECTION
 
-
-
-
-
+# 1. I learned, first and foremost, that pseudocode can include a technical description
+#    of method inputs and outputs, but should explain it's goals in plain English in
+#    between.  Also that pseudocode templates can be very helpful.
+# 2. In my opinion a hash was the only real choice.  Since each item needed an attached
+#    value by prescription of it being a grocery list, the key/value format of hashes
+#    was perfect.
+# 3. A method returns whatever the last line of the method returns.
+# 4. Any globally available object.
+# 5. By having methods return the value you wish to feed to another method and then
+#    assigning a specfic method call to a variable to give the next method.
+# 6. I've definitely solidified my comfort with how to pass info from method to method.
+#    Still unclear to me is the exact scope relationship of objects between methods and
+#    variables inside and outside them. 
 
 
 
