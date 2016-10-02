@@ -1,0 +1,8 @@
+Word Game Class Pseudocode
+
+1. On initialization the class will accepts a word and sets a guess limit based on how many letters are in the word.  Also create a string of underscores with a length equal to the word. (“________”) Maybe call it player_guesses
+2. Method which accepts a letter guess and searches the word for the letter.
+If the letter is present, return true, if not, return false.
+3. Method which stores guessed letters and compares them with the inputted letter. If letter has already been guessed, return true, otherwise, return false
+4. Method which, when a correct letter is guessed, replaces the correctly indexed character in the underscore string.
+5.An end of game method which prints a congrats if they win and a taunt if they lose
