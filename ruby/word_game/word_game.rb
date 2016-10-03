@@ -52,9 +52,11 @@ class WordGame
 	end
 
 	def win
+		"Congrats, you won before you ran out of guesses"
 	end
 
 	def lose
+		"Sorry, you're out of guesses. The word was '#{@word}'"
 	end
 end
 

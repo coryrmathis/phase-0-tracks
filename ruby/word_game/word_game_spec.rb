@@ -36,18 +36,14 @@ describe WordGame do
 		game.letter_guess("a")
 		expect(game.word_status?).to eq "_____"
 	end
-#TEST 7:
-	it "ends the game when @word == @word_status" do
-		expect(game.word_status?).to eq "green"
-	end
 
-#TEST 8:
+#TEST 7:
 	it "prints congrats method if user wins" do
 		expect(game.win).to eq "Congrats, you won before you ran out of guesses"
 	end
-#TEST 9:
+#TEST 8:
 	it "prints consolation method if user loses and reveal word" do
-		expect(game.lose).to eq "Sorry, you're out of guesses.  The word was: green."
+		expect(game.lose).to eq "Sorry, you're out of guesses. The word was 'green'"
 	end
 
 
