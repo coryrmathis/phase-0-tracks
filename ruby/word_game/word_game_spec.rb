@@ -4,7 +4,7 @@ describe WordGame do
 	let(:game) { WordGame.new("green")}
 #TEST 1: PASS
 	it "stores the word upon initialization and sets a guess count equal to the length of the word + 4" do
-		expect(game.word?).to eq "green"
+		expect(game.word).to eq "green"
 		expect(game.guess_count).to eq 9
 	end
 #TEST 2: PASS
@@ -16,7 +16,7 @@ describe WordGame do
 	end
 # TEST 3: PASS
 	it "creates a string of underscores whose length equals length of word" do
-		expect(game.word_status?).to eq "_____"
+		expect(game.word_status).to eq "_____"
 	end
 #TEST 4: PASS
 	it "accepts a letter guess and confirms or denies it's presence" do
@@ -27,14 +27,14 @@ describe WordGame do
 #TEST 5: PASS
 	it "accepts a correct letter guess, updates @word_status" do
 		game.letter_guess("g")
-		expect(game.word_status?).to eq "g____"
+		expect(game.word_status).to eq "g____"
 		game.letter_guess("r")
-		expect(game.word_status?).to eq "gr___"
+		expect(game.word_status).to eq "gr___"
 	end
 #TEST 6: PASS
 	it "accepts an incorrect letter guess, doesn't update @word_status" do
 		game.letter_guess("a")
-		expect(game.word_status?).to eq "_____"
+		expect(game.word_status).to eq "_____"
 	end
 #TEST 7: PASS
 	it "ends game if the user runs out of guesses" do
