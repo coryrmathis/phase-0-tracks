@@ -1,42 +1,107 @@
 class WordGame
+	attr_accessor :word_status, :guess_count, :word
 
 	def initialize(word)
 		@word = word
 		@guess_count = @word.length + 4
-	end
-
-	def word?
-		puts @word
-		@word
-	end
-
-	def guess_count
-		puts @guess_count
-		@guess_count
+		@guessed_letters = []
+		@word_status = "_" * @word.length
 	end
 
 	def letter_guess(letter)
+		if @guessed_letters.include?(letter) == true
+			nil
+		else
+			@guessed_letters << letter
+			@guess_count -= 1
+			if @word.include?(letter) == true
+				update_word_status(letter)
+				true
+			else
+				false
+			end
+		end
 	end
 
-	def word_status?
+	def update_word_status(letter)
+		@word_status_array = @word_status.split("")
+		@new_word_status_array = []
+		count = 0
+		until count == @word.length
+		@word_status_array.each do |character|
+			if letter == @word[count]
+				@new_word_status_array << letter
+			else
+				@new_word_status_array << character
+			end
+			count += 1
+		end
+	end
+		@word_status = @new_word_status_array.join("")
 	end
 
-	def check_letter
+	def end_game
+		if @word_status == @word
+			puts "-" * 100
+			puts "Congrats, you won before you ran out of guesses"
+			puts "-" * 100
+		elsif @guess_count == 0
+			puts "-" * 100
+			puts "Sorry, you're out of guesses. The word was '#{@word}'"
+			puts "-" * 100
+		end
 	end
 
-	def correct_guess
-	end
-
-	def incorrect_guess
-	end
-
-	def guessed_letters
-	end
-
-	def win
-	end
-
-	def lose
-	end
-	
 end
+
+
+#USER INTERFACE
+puts ""
+puts "-" * 100
+puts "Welcome to Letter Guess!"
+puts "-" * 100
+puts ""
+puts "Player 1: Please enter a word. All lowercase please!"
+game_1 = WordGame.new(gets.chomp)
+
+until game_1.guess_count == 0 || game_1.word == game_1.word_status
+puts ""
+puts "-" * 100
+puts "Player 2: You have #{game_1.guess_count} guesses left. Guess a letter. Lowercase please!"
+puts "-" * 100
+puts ""
+letter = gets.chomp
+guess = game_1.letter_guess(letter)
+if guess == nil
+	puts ""
+	puts "-" * 100
+	puts "You already guessed that letter!"
+	puts "-" * 100
+	puts ""
+elsif guess == true
+	puts ""
+	puts "-" * 100
+	puts "Nice guess! The word does contain a #{letter}."
+	puts "Word Status: #{game_1.word_status}"
+	puts "-" * 100
+	puts ""
+elsif guess == false
+	puts ""
+	puts "-" * 100
+	puts "Sorry the word doesn't contain #{letter}'s."
+	puts "-" * 100
+	puts ""
+end
+end
+
+game_1.end_game
+
+
+
+
+
+
+
+
+
+
