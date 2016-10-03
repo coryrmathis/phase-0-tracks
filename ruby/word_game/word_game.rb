@@ -33,9 +33,20 @@ class WordGame
 	end
 
 	def update_word_status(letter)
-		@word_status.split("")
-		@word_status[@word.index(letter)] = letter
-		@word_status
+		@word_status_array = @word_status.split("")
+		@new_word_status_array = []
+		count = 0
+		until count == @word.length
+		@word_status_array.each do |character|
+			if letter == @word[count]
+				@new_word_status_array << letter
+			else
+				@new_word_status_array << character
+			end
+			count += 1
+		end
+	end
+		@word_status = @new_word_status_array.join("")
 	end
 
 	def word_status?
@@ -60,6 +71,3 @@ class WordGame
 	end
 end
 
-
-# @word_status.split("")
-# @word_status[@word_status.index(letter)] = letter
