@@ -4,6 +4,7 @@ class WordGame
 		@word = word
 		@guess_count = @word.length + 4
 		@guessed_letters = []
+		@word_status = "_" * @word.length
 	end
 
 	def word?
@@ -31,9 +32,8 @@ class WordGame
 	end
 
 	def word_status?
-	end
-
-	def check_letter
+		puts @word_status
+		@word_status
 	end
 
 	def correct_guess
