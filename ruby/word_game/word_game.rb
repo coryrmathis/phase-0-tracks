@@ -24,6 +24,7 @@ class WordGame
 			@guessed_letters << letter
 			@guess_count -= 1
 			if @word.include?(letter) == true
+				update_word_status(letter)
 				true
 			else
 				false
@@ -31,18 +32,23 @@ class WordGame
 		end
 	end
 
+	def update_word_status(letter)
+		@word_status.split("")
+		@word_status[@word.index(letter)] = letter
+		@word_status
+	end
+
 	def word_status?
 		puts @word_status
 		@word_status
 	end
 
-	def correct_guess
-	end
-
-	def incorrect_guess
-	end
-
-	def guessed_letters
+	def end_game
+		if @word_status == @word
+			win
+		elsif @guess_count == 0
+			lose
+		end
 	end
 
 	def win
@@ -51,3 +57,7 @@ class WordGame
 	def lose
 	end
 end
+
+
+# @word_status.split("")
+# @word_status[@word_status.index(letter)] = letter

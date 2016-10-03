@@ -24,25 +24,28 @@ describe WordGame do
 		expect(game.letter_guess("a")).to eq false
 	end
 
-#TEST 5:
-	it "accepts a correct letter guess, updates @word_status, and @guessed_letters" do
+#TEST 5: PASS
+	it "accepts a correct letter guess, updates @word_status" do
 		game.letter_guess("g")
-		expect(game.correct_guess("g")).to eq "g____"
 		expect(game.word_status?).to eq "g____"
-		expect(game.guessed_letters).to include("g")
+		game.letter_guess("r")
+		expect(game.word_status?).to eq "gr___"
 	end
-#TEST 6:
-	it "accepts an incorrect letter guess, updates @word_status, and @guessed_letters" do
+#TEST 6: PASS
+	it "accepts an incorrect letter guess, doesn't update @word_status" do
 		game.letter_guess("a")
-		expect(game.incorrect_guess("a")).to eq "_____"
 		expect(game.word_status?).to eq "_____"
-		expect(game.guessed_letters).to include("a")
 	end
 #TEST 7:
+	it "ends the game when @word == @word_status" do
+		expect(game.word_status?).to eq "green"
+	end
+
+#TEST 8:
 	it "prints congrats method if user wins" do
 		expect(game.win).to eq "Congrats, you won before you ran out of guesses"
 	end
-#TEST 8:
+#TEST 9:
 	it "prints consolation method if user loses and reveal word" do
 		expect(game.lose).to eq "Sorry, you're out of guesses.  The word was: green."
 	end
