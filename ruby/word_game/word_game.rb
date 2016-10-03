@@ -3,6 +3,7 @@ class WordGame
 	def initialize(word)
 		@word = word
 		@guess_count = @word.length + 4
+		@guessed_letters = []
 	end
 
 	def word?
@@ -16,6 +17,17 @@ class WordGame
 	end
 
 	def letter_guess(letter)
+		if @guessed_letters.include?(letter) == true
+			nil
+		else
+			@guessed_letters << letter
+			@guess_count -= 1
+			if @word.include?(letter) == true
+				true
+			else
+				false
+			end
+		end
 	end
 
 	def word_status?
@@ -38,5 +50,4 @@ class WordGame
 
 	def lose
 	end
-	
 end
