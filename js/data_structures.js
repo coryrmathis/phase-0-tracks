@@ -13,6 +13,17 @@ function addHorse(name) {
 	horse_names.push(name);
 }
 
+// HORSE OBJECT CREATION
+
+var horseObject = {};
+
+// ARRAY ITERATION TO CREATE HORSE/COLOR PAIRS. *assumes same number of elements in each array*
+for (var i = 0; i < horse_colors.length; i++) {
+	horseObject[horse_names[i]] = horse_colors[i];
+}
+
+// PRINT OBJECT
+console.log(horseObject)
 
 
 
