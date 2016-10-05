@@ -8,3 +8,24 @@ function addColor(color) {
 function addHorse(name) {
 	horse_names.push(name);
 }
+
+
+
+
+
+
+
+
+
+
+function Car(make, model, year) {
+
+	console.log("New Car:", this);
+
+	this.make = make;
+	this.model = model;
+	this.year = year;
+
+	this.horn = function() {cosole.log("BEEEEEEP!");};
+
+}
