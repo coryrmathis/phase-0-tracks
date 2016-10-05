@@ -72,3 +72,42 @@ longest(testArray2);
 testArray3 = ["walrus", "tiger", "elephant", "boa constrictor"];
 // Should output "boa constrictor"
 longest(testArray3);
+
+
+// RELEASE 1 TESTING
+
+// TEST FOR TRUE OUTPUT
+
+// Made sure to test objects with different number of key/value pairs
+var myInfo = {name: "Cory", age: 26, happy: true};
+var herInfo = {name: "Michelle", age: 30, happy: true, location: "Georgia"};
+// Should print true because myInfo and herInfo share a key/value pair of "happy: true"
+console.log(match(myInfo, herInfo));
+
+
+// TEST FOR FALSE OUTPUT WITH OBJECTS WITHOUT SHARED KEYS OR VALUES
+
+var favoriteColor = {"Cory": "green", "Chad": "red", "Kyle": "blue"};
+var seasonalTemp = {spring: "warm", summer: "hot", fall: "cool", winter: "cold"};
+// Should print false because favoriteColor and seasonalTemp share neither no keys or values
+console.log(match(favoriteColor, seasonalTemp));
+
+// TEST FOR FALSE OUTPUT WITH OBJECTS WITH SHARED KEY OR VALUE BUT NOT BOTH
+
+var mathisFamily = {father: "Craig", mother: "Pam", child: "Kyle"}
+var morminoFamily = {father: "Kyle", mother: "Rebecca", child: "Pam"}
+// Should print false because, although the objects have identical keys, and some values happen to 
+//	be common to both, not key/value pair is exactly the same.
+console.log(match(mathisFamily, morminoFamily))
+
+
+
+
+
+
+
+
+
+
+
+
