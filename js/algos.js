@@ -23,6 +23,46 @@ function longest(list) {
 	console.log(soLong);
 }
 
+// RELEASE 1: FIND A KEY/VALUE MATCH
+
+// INPUT: two JS objects
+// STEPS:
+//  -Default match status variable = false
+//	-Assign keys of each object to variable (Returns array)
+//  -Iterate through one key list checking each 
+//   element against the other array for matches
+//	-IF two keys match,
+//		-Check if values match
+//		-IF values match
+//			-match status variable is TRUE
+//   	-ELSE
+//			-match status variable is still FALSE
+//	-ELSE
+//		-match status variable is still FALSE
+//	-RETURN match status variable
+// OUTPUT: TRUE if the objects share at lease one match; FALSE if not
+
+function match(object1, object2) {
+	matchStatus = false;
+	object1Keys = Object.keys(object1);
+	object2Keys = Object.keys(object2);
+	for (var u = 0; u < object1Keys.length; u++) {
+		for (var i = 0; i < object2Keys.length; i++) {
+			if (object1Keys[u] == object2Keys[i]) {
+				if (object1[object1Keys[u]] == object2[object2Keys[i]]) {
+					matchStatus = true
+				}
+			}
+		}
+	}
+return matchStatus
+}
+
+
+
+
+// RELEASE 0 TESTING
+
 testArray = ["Cory", "Michael", "Constantine", "Michelle", "Robert"];
 // Should output "Constantine"
 longest(testArray);
