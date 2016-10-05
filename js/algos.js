@@ -20,7 +20,7 @@ function longest(list) {
 		}
 
 	}
-	console.log(soLong);
+	return soLong;
 }
 
 // RELEASE 1: FIND A KEY/VALUE MATCH
@@ -44,8 +44,10 @@ function longest(list) {
 
 function match(object1, object2) {
 	matchStatus = false;
+	// Separate object keys into their own array respectively
 	object1Keys = Object.keys(object1);
 	object2Keys = Object.keys(object2);
+	// Macro loop for testing first key in first array against each key in the second array
 	for (var u = 0; u < object1Keys.length; u++) {
 		for (var i = 0; i < object2Keys.length; i++) {
 			if (object1Keys[u] == object2Keys[i]) {
@@ -58,6 +60,30 @@ function match(object1, object2) {
 return matchStatus
 }
 
+// RELEASE 2: GENERATE RANDOM TEST DATA
+
+// INPUT: integer (number elements in the array to be built)
+// STEPS:
+//	-Use integer to control number of times a loop is run
+//  -Loop should create a string between 1 and 10 randomly generated characters.
+//		-Then add that string to an array using index number associated with input integer.
+//  -Return constructed array.
+// OUTPUT: array of randomly generated strings between 1 and 10 characters long, 
+//         the length of which == input integer
+
+function randomArray(integer){
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	var endArray = [];
+	for (var i = 0; i < integer; i++){
+		var stringTemplate = "";
+		var charNumber = Math.floor((Math.random() * 10) + 1);
+		for (var u = 0; u < charNumber; u++){
+			stringTemplate = stringTemplate + alphabet[Math.floor((Math.random() * 25) + 0)];
+		}
+	endArray[i] = stringTemplate;
+	}
+	return endArray;
+}
 
 
 
@@ -65,13 +91,13 @@ return matchStatus
 
 testArray = ["Cory", "Michael", "Constantine", "Michelle", "Robert"];
 // Should output "Constantine"
-longest(testArray);
+console.log(longest(testArray));
 testArray2 = ["grenandine", "simple syrup", "orgeat", "honey"];
 // Should output "simple syrup"
-longest(testArray2);
+console.log(longest(testArray2));
 testArray3 = ["walrus", "tiger", "elephant", "boa constrictor"];
 // Should output "boa constrictor"
-longest(testArray3);
+console.log(longest(testArray3));
 
 
 // RELEASE 1 TESTING
@@ -100,6 +126,22 @@ var morminoFamily = {father: "Kyle", mother: "Rebecca", child: "Pam"}
 //	be common to both, not key/value pair is exactly the same.
 console.log(match(mathisFamily, morminoFamily))
 
+
+
+// RELEASE 2 TESTING
+
+// Should create 10 random arrays, printing each and feeding each to the "longest" method, printing the result
+
+for (i = 0; i < 10; i++){
+	var array = randomArray(Math.floor((Math.random() * 5) + 1))
+	console.log("")
+	console.log("------------------------");
+	console.log("Array " + i + ": " + array);
+	console.log("")
+	console.log("Longest Element: " + longest(array));
+	console.log("------------------------");
+	console.log("")
+}
 
 
 
