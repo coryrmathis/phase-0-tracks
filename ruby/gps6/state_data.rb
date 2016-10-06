@@ -1,5 +1,12 @@
-#population density is number of people per square mile as of 2012
-#this data is updated every year with estimates from a 10 year census
+# Virus Predictor
+
+# I worked on this challenge [by myself, with: ].
+# We spent [#] hours on this challenge.
+
+# EXPLANATION OF require_relative
+# Calling require allows for access to additional files containing class definitions.  
+
+#Require_relative assumes the files share a directory. Require needs to be fed a complete path.
 
 
 STATE_DATA = {
@@ -55,3 +62,4 @@ STATE_DATA = {
   "Wisconsin" => {population_density: 105.2, population: 5726398},
   "Wyoming" => {population_density: 5.851, population: 576412}
 }
+
