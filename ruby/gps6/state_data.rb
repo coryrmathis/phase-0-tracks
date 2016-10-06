@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with Christain Salas.
+# We spent 1.5 hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Calling require allows for access to additional files containing class definitions.  

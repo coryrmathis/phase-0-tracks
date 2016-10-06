@@ -96,3 +96,32 @@ access_state_data
 
 #=======================================================================
 # Reflection Section
+
+# Question 1: One hash syntax assigns values to a key by used of the hash
+#             rocket ("Alabama" => "population").  The other assigns values using the symbol format 
+#             (population: 320,000)
+
+# Question 2: The "require_relative" allows a file access to another files contents.  Specifically
+#             "require_relative" assumes the connected files share a directory. A simple "require"
+#             needs a complete path to the file.
+
+# Question 3: You can iterate through a hash with .each by passing it block parameters for both
+#             key and value.  You can also call .keys on a hash to create an array of hash keys
+#             and then use that array to iterate through hash values by accessing them with their precise keys.
+
+# Question 4: What stood out was that the methods expected arguments which had global scopes (i.e. instance variables).
+#             In class definitions, it's unnecessary to pass instance variables to a method.  Instance variables are 
+#             are available everywhere in the class definition.
+
+# Question 5: Most solidified for me is the concept of DRY.  This was great practice for being thoughtful about what
+#             code does and not repeating oneself if possible.  Also pairing down unnecessary/redundant inclusions, like
+#             not giving an instance method parameters if the arguments are exclusively instance variables.  There's
+#             no need.
+
+
+
+
+
+
+
+
