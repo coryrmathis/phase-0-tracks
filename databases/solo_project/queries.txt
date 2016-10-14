@@ -1,0 +1,48 @@
+1. Input: SELECT * FROM songs;
+   Output: 
+1|Ashes to Ashes|David Bowie|1980-08-08|2
+2|Hooked on a Feeling|Blue Suede|1968-11-01|5
+3|Fooled Around and Fell in Love|Elvin Bishop|1976-03-01|5
+4|Come and Get Your Love|Redbone|1974-01-01|1
+5|Bad Romance|Lady Gaga|2009-10-26|4
+6|Chandelier|Sia|2014-03-17|4
+7|Superstition|Stevie Wonder|1972-10-24|1
+8|Jesus Walks|Kanye West|2004-03-25|6
+9|Starman|David Bowie|1972-04-28|2
+10|Moonage Daydream|David Bowie|1971-05-07|2
+11|Fashion|David Bowie|1980-10-24|2
+
+2. Input: UPDATE songs SET genre_id=1 WHERE artist="Redbone";
+   Output: N/A
+
+3. Input: SELECT * FROM songs, genres WHERE songs.genre_id = genres.id;
+   Output:
+1|Ashes to Ashes|David Bowie|1980-08-08|2|2|Glam Rock|1975|true
+2|Hooked on a Feeling|Blue Suede|1968-11-01|5|5|Rock|1970|true
+3|Fooled Around and Fell in Love|Elvin Bishop|1976-03-01|5|5|Rock|1970|true
+4|Come and Get Your Love|Redbone|1974-01-01|1|1|Funk|1970|false
+5|Bad Romance|Lady Gaga|2009-10-26|4|4|EDM|2012|true
+6|Chandelier|Sia|2014-03-17|4|4|EDM|2012|true
+7|Superstition|Stevie Wonder|1972-10-24|1|1|Funk|1970|false
+8|Jesus Walks|Kanye West|2004-03-25|6|6|Hip Hop|2008|true
+9|Starman|David Bowie|1972-04-28|2|2|Glam Rock|1975|true
+10|Moonage Daydream|David Bowie|1971-05-07|2|2|Glam Rock|1975|true
+11|Fashion|David Bowie|1980-10-24|2|2|Glam Rock|1975|true
+
+
+4. Input: SELECT songs.song, genres.genre FROM songs JOIN genres ON songs.genre_id = genres.id;
+   Output:
+Ashes to Ashes|Glam Rock
+Hooked on a Feeling|Rock
+Fooled Around and Fell in Love|Rock
+Come and Get Your Love|Funk
+Bad Romance|EDM
+Chandelier|EDM
+Superstition|Funk
+Jesus Walks|Hip Hop
+Starman|Glam Rock
+Moonage Daydream|Glam Rock
+Fashion|Glam Rock
+
+5. Input: DELETE FROM songs WHERE artist="Blue Suede";
+   Output: N/A
