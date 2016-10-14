@@ -46,3 +46,55 @@ Fashion|Glam Rock
 
 5. Input: DELETE FROM songs WHERE artist="Blue Suede";
    Output: N/A
+
+6. Input: SELECT song, genre FROM songs INNER JOIN genres ON songs.genre_id = genres.id;
+   Output: 
+Ashes to Ashes|Glam Rock
+Fooled Around and Fell in Love|Rock
+Come and Get Your Love|Funk
+Bad Romance|EDM
+Chandelier|EDM
+Superstition|Funk
+Jesus Walks|Hip Hop
+Starman|Glam Rock
+Moonage Daydream|Glam Rock
+Fashion|Glam Rock
+
+7. Input: SELECT song, genre FROM songs LEFT JOIN genres ON songs.genre_id = genres.id;****JUST TESTING****** (SAME OUTPUT AS LAST CALL)
+   Output:
+Ashes to Ashes|Glam Rock
+Fooled Around and Fell in Love|Rock
+Come and Get Your Love|Funk
+Bad Romance|EDM
+Chandelier|EDM
+Superstition|Funk
+Jesus Walks|Hip Hop
+Starman|Glam Rock
+Moonage Daydream|Glam Rock
+Fashion|Glam Rock
+
+8. Input: SELECT songs.song, songs.artist, genres.genre, genres.peak_popularity FROM songs JOIN genres ON songs.genre_id = genres.id;
+   Output:
+Ashes to Ashes|David Bowie|Glam Rock|1975
+Fooled Around and Fell in Love|Elvin Bishop|Rock|1970
+Come and Get Your Love|Redbone|Funk|1970
+Bad Romance|Lady Gaga|EDM|2012
+Chandelier|Sia|EDM|2012
+Superstition|Stevie Wonder|Funk|1970
+Jesus Walks|Kanye West|Hip Hop|2008
+Starman|David Bowie|Glam Rock|1975
+Moonage Daydream|David Bowie|Glam Rock|1975
+Fashion|David Bowie|Glam Rock|1975
+
+9. Input: SELECT genres.genre, songs.song FROM songs JOIN genres ON songs.genre_id = genres.id;
+   Output:
+Glam Rock|Ashes to Ashes
+Rock|Fooled Around and Fell in Love
+Funk|Come and Get Your Love
+EDM|Bad Romance
+EDM|Chandelier
+Funk|Superstition
+Hip Hop|Jesus Walks
+Glam Rock|Starman
+Glam Rock|Moonage Daydream
+Glam Rock|Fashion
