@@ -1,0 +1,41 @@
+1. (Join Three Tables)
+
+Input: SELECT businesses.name, reviews.comment, users.last_name FROM businesses 
+       JOIN reviews ON businesses.id=reviews.business_id
+       JOIN users ON users.id=reviews.user_id;
+
+Output:
+
+name|comment|last_name
+Grundy Hollow Wedding Chapel|Great Wedding|Pitt
+JoeBob's Sportz Barn|My resistance band broke and slapped me in face|Jolie
+The Beagle Nightclub|The DJ was great and drinks were strong...but maybe a bit too strong...|George
+Amir's Towing|Prompt and kind roadside assistance.|Pitt
+
+2. (Select Only User Names, Business Name, Star Rating, and Comment)
+
+Inputs: SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+        FROM users
+        JOIN businesses ON reviews.user_id=users.id
+        JOIN reviews ON reviews.business_id=businesses.id;
+Output:
+
+first_name|last_name|name|stars|comment
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|Great Wedding
+Angela|Jolie|JoeBob's Sportz Barn|1|My resistance band broke and slapped me in face
+Denzel|George|The Beagle Nightclub|3|The DJ was great and drinks were strong...but maybe a bit too strong...
+Bradford|Pitt|Amir's Towing|5|Prompt and kind roadside assistance.
+
+3. (Select Data From All Three Tables For Just One Particular Business)
+
+Input: SELECT businesses.name, reviews.stars, reviews.comment, users.first_name, users.last_name
+       FROM businesses
+       JOIN reviews ON reviews.business_id=businesses.id
+       JOIN users ON reviews.user_id=users.id
+       WHERE businesses.id=1;
+Output:
+
+
+name|stars|comment|first_name|last_name
+Grundy Hollow Wedding Chapel|5|Great Wedding|Bradford|Pitt
+Grundy Hollow Wedding Chapel|5|Beautiful ceremony|Angela|Jolie
