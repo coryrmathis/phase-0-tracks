@@ -36,3 +36,16 @@ SQL
 fitness_db.execute(default_user_table)
 fitness_db.execute(default_warmup_table)
 fitness_db.execute(default_date_table)
+
+# USER METHODS
+
+def add_workout
+end
+
+def 
+
+
+
+
+
+
