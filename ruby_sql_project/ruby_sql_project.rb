@@ -134,7 +134,6 @@ def get_day3_data(db, username)
 	db.execute("SELECT * FROM day3;")
 end
 
-puts get_user_data(fitness_db, "Kyle Mathis")
 
 # USER INTERFACE
 puts "-" * 30
@@ -227,7 +226,6 @@ if user_id.empty? == true
 
 
 else
-	puts username
 	user_data = get_user_data(db, username)
 	warm_up_data = get_warm_up_data(db, username)
 	day1_data = get_day1_data(db, username)
