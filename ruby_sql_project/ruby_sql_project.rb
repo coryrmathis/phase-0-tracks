@@ -134,32 +134,117 @@ def get_day3_data(db, username)
 	db.execute("SELECT * FROM day3;")
 end
 
+puts get_user_data(fitness_db, "Kyle Mathis")
+
 # USER INTERFACE
 puts "-" * 30
 puts "Welcome to your fitness tracker. If you have an account, 
 enter your name to view your fitness plan. Otherwise enter your name to start a new account
-end 'q' to exit the program."
+or enter 'q' to exit the program."
 puts "-" * 30
 
 db = fitness_db
 username = gets.chomp
 user_id = get_user_id(db, username)
 
-add_warm_up(db, 10, 10, 10, "Listen to Rage Against the Machine", user_id)
+# add_warm_up(db, 10, 10, 10, "Listen to Rage Against the Machine", user_id)
+# add_day1(db, "max mile", "benchpress", user_id)
+# add_day2(db, "swim", "weighted squats", user_id)
+# add_day3(db, "bike", "power cleans", user_id)
+
+
 
 if user_id.empty? == true
 	# Create new user profile
-else
+	puts "User profile not found. Let's make a new one..."
+	puts ""
+	puts "What's your current age?"
+	age = gets.chomp.to_i
+	puts "What's your current weight?"
+	current_weight = gets.chomp.to_i
+	puts "What's your goal weight?"
+	goal_weight = gets.chomp.to_i
+	puts "Whats your fastest mile? Example: 8:20 is eight minutes and 20 seconds."
+	max_mile = gets.chomp
+	puts "Creating new user profile..."
+	add_user(db, username, age, current_weight, goal_weight, max_mile)
+	#Create warm up routine
+	puts "Now we need to decide on a daily warm up for you. How many push ups should you do?"
+	push_ups = gets.chomp
+	puts "How many sit ups?"
+	sit_ups = gets.chomp
+	puts "How many squats?"
+	squats = gets.chomp
+	puts "Want to add any comments on your warm up? Workout music, etc...?"
+	comments = gets.chomp
+	puts ""
+	puts "Storing warm up data..."
+	add_warm_up(db, push_ups, sit_ups, squats, comments, 0)
+	#Create Day 1 plan
+	puts "Right now this fitness tracker supports a three day workout cycle. Let's start with Day 1..."
+	puts "What will you do for cardio on Day 1?"
+	day1_cardio = gets.chomp
+	puts "How about Day 1 strength training?"
+	day1_strength = gets.chomp
+	puts "Storing Day 1 data..."
+	add_day1(db, day1_cardio, day1_strength, 0)
+	#Create Day 2 plan
+	puts "What will you do for cardio on Day 2?"
+	day2_cardio = gets.chomp
+	puts "How about Day 2 strength training?"
+	day2_strength = gets.chomp
+	puts "Storing Day 2 data..."
+	add_day2(db, day2_cardio, day2_strength, 0)
+	#Create Day 3 plan
+	puts "What will you do for cardio on Day 3?"
+	day3_cardio = gets.chomp
+	puts "How about Day 3 strength training?"
+	day3_strength = gets.chomp
+	puts "Storing Day 3 data..."
+	add_day3(db, day3_cardio, day3_strength, 0)
+	puts ""
+	puts "All finished here's your current fitness plan..."
+	puts ""
+
 	user_data = get_user_data(db, username)
 	warm_up_data = get_warm_up_data(db, username)
 	day1_data = get_day1_data(db, username)
 	day2_data = get_day2_data(db, username)
-	day_3_data = get_day3_data(db, username)
+	day3_data = get_day3_data(db, username)
 
+	puts "*" * 50
 	puts "YOUR CURRENT FITNESS INFO:"
 	puts "USERNAME: #{user_data[0][1]}"
-	puts "DAILY WARM-UP: Push-ups: #{warm_up_data[0][1]}, Sit-ups: #{warm_up_data[0][2]}, Squats: #{warm_up_data[0][3]}"
+	puts "CURRENT WEIGHT: #{user_data[0][3]}"
+	puts "GOAL WEIGHT: #{user_data[0][4]}"
+	puts "MAX MILE: #{user_data[0][5]}"
+	puts "DAILY WARM-UP: Push-ups: #{warm_up_data[0][1]}, Sit-ups: #{warm_up_data[0][2]}, Squats: #{warm_up_data[0][3]}, Comments: #{warm_up_data[0][4]}"
+	puts "DAY 1 WORKOUT: #{day1_data[0][1]} and #{day1_data[0][2]}"
+	puts "DAY 2 WORKOUT: #{day2_data[0][1]} and #{day2_data[0][2]}"
+	puts "DAY 3 WORKOUT: #{day3_data[0][1]} and #{day3_data[0][2]}"
+	puts "*" * 50
+	
 
+
+else
+	puts username
+	user_data = get_user_data(db, username)
+	warm_up_data = get_warm_up_data(db, username)
+	day1_data = get_day1_data(db, username)
+	day2_data = get_day2_data(db, username)
+	day3_data = get_day3_data(db, username)
+
+	puts "*" * 50
+	puts "YOUR CURRENT FITNESS INFO:"
+	puts "USERNAME: #{user_data[0][1]}"
+	puts "CURRENT WEIGHT: #{user_data[0][3]}"
+	puts "GOAL WEIGHT: #{user_data[0][4]}"
+	puts "MAX MILE: #{user_data[0][5]}"
+	puts "DAILY WARM-UP: Push-ups: #{warm_up_data[0][1]}, Sit-ups: #{warm_up_data[0][2]}, Squats: #{warm_up_data[0][3]}, Comments: #{warm_up_data[0][4]}"
+	puts "DAY 1 WORKOUT: #{day1_data[0][1]} and #{day1_data[0][2]}"
+	puts "DAY 2 WORKOUT: #{day2_data[0][1]} and #{day2_data[0][2]}"
+	puts "DAY 3 WORKOUT: #{day3_data[0][1]} and #{day3_data[0][2]}"
+	puts "*" * 50
 end
 
 
